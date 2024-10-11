@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Controle de Ponto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Controle de Ponto</h1>
+        <div id="datetime"></div>
+    </header>
+
+    <main>
+        <section class="registro">
+            <h2>Registrar Ponto</h2>
+            <div class="buttons">
+                <button onclick="registrarPonto('entradaExpediente')">Entrada Expediente</button>
+                <button onclick="registrarPonto('saidaExpediente')">Saída Expediente</button>
+                <button onclick="registrarPonto('entradaIntervalo')">Entrada Intervalo</button>
+                <button onclick="registrarPonto('saidaIntervalo')">Saída Intervalo</button>
+            </div>
+        </section>
+
+        <section class="registro-passado">
+            <h2>Registrar Ponto no Passado</h2>
+            <form id="formRegistroPassado" onsubmit="registrarPontoPassado(event)">
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" required>
+                </div>
+                <div class="form-group">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" required>
+                        <option value="entradaExpediente">Entrada Expediente</option>
+                        <option value="saidaExpediente">Saída Expediente</option>
+                        <option value="entradaIntervalo">Entrada Intervalo</option>
+                        <option value="saidaIntervalo">Saída Intervalo</option>
+                    </select>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </section>
+
+        <section class="justificativa">
+            <h2>Justificar Ausência</h2>
+            <form id="formJustificativa" onsubmit="registrarJustificativa(event)">
+                <div class="form-group">
+                    <label for="dataJustificativa">Data:</label>
+                    <input type="date" id="dataJustificativa" required>
+                </div>
+                <div class="form-group">
+                    <label for="motivo">Motivo:</label>
+                    <textarea id="motivo" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="arquivo">Anexar Arquivo:</label>
+                    <input type="file" id="arquivo">
+                </div>
+                <button type="submit">Enviar Justificativa</button>
+            </form>
+        </section>
+
+        <section class="observacao">
+            <h2>Adicionar Observação</h2>
+            <form id="formObservacao" onsubmit="adicionarObservacao(event)">
+                <div class="form-group">
+                    <label for="dataObservacao">Data:</label>
+                    <input type="date" id="dataObservacao" required>
+                </div>
+                <div class="form-group">
+                    <label for="observacao">Observação:</label>
+                    <textarea id="observacao" required></textarea>
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <div class="link-relatorio">
+            <a href="relatorio.html">Ver Relatório de Marcações</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Sistema de Controle de Ponto
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

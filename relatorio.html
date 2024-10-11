@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório de Marcações</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Relatório de Marcações</h1>
+    </header>
+
+    <main>
+        <section class="filtro">
+            <h2>Filtrar Registros</h2>
+            <div class="buttons">
+                <button onclick="filtrarRegistros('semana')">Última Semana</button>
+                <button onclick="filtrarRegistros('mes')">Último Mês</button>
+                <button onclick="mostrarTodosRegistros()">Todos</button>
+            </div>
+        </section>
+
+        <section id="registros">
+            <!-- Os registros serão inseridos aqui via JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Sistema de Controle de Ponto
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
